@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "eidolon",
+  "version": "${version}",
+  "name": "Eidolon",
+  "description": "Fabric port for the awesome Eidolon Forge mod!",
+  "authors": [
+    "Zifiv",
+    "Kayzen"
+  ],
+  "contact": {
+    "homepage": "https://github.com/newhoryzon/eidolon-fabric/",
+    "sources": "https://github.com/newhoryzon/eidolon-fabric/",
+    "issues": "https://github.com/newhoryzon/eidolon-fabric/issues"
+  },
+  "license": "MIT License",
+  "icon": "assets/eidolon/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.nhoryzon.mc.eidolon.EidolonMod"
+    ],
+    "client": [
+      "com.nhoryzon.mc.eidolon.EidolonModClient"
+    ],
+    "rei_client": [
+      "com.nhoryzon.mc.eidolon.integration.rei.EidolonModREI"
+    ],
+    "modmenu": [
+      "com.nhoryzon.mc.eidolon.integration.modmenu.EidolonModMenu"
+    ]
+  },
+  "mixins": [
+    "eidolon.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.7",
+    "fabric": ">=0.56.0+1.19",
+    "minecraft": "~1.19"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.discord": "https://discord.gg/MskvEhPDQz"
+      }
+    }
+  }
+}
