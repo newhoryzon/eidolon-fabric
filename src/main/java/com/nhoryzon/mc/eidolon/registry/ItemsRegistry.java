@@ -2,6 +2,10 @@ package com.nhoryzon.mc.eidolon.registry;
 
 import com.nhoryzon.mc.eidolon.EidolonMod;
 import com.nhoryzon.mc.eidolon.item.ModBlockItem;
+import com.nhoryzon.mc.eidolon.item.BonechillWandItem;
+import com.nhoryzon.mc.eidolon.item.CleavingAxeItem;
+import com.nhoryzon.mc.eidolon.item.ModItemSettings;
+import com.nhoryzon.mc.eidolon.item.SoulfireWandItem;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
@@ -48,10 +52,22 @@ public enum ItemsRegistry {
     POLISHED_PLANKS_FENCE_GATE("polished_planks_fence_gate", () -> new ModBlockItem(BlocksRegistry.POLISHED_PLANKS_FENCE_GATE.get())),
     POLISHED_WOOD_PILLAR("polished_wood_pillar", () -> new ModBlockItem(BlocksRegistry.POLISHED_WOOD_PILLAR.get()));
 
+    /**  Items **/
+    
+    BONECHILL_WAND("bonechill_wand", BonechillWandItem::new),
+    SOULFIRE_WAND("soulfire_wand", SoulfireWandItem::new),
+    CLEAVING_AXE("cleaving_axe", CleavingAxeItem::new),
+
+    PEWTER_INGOT("pewter_ingot");
+
     private final String pathName;
     private final Supplier<Item> itemSupplier;
     private final Integer burnTime;
     private Item item;
+
+    ItemsRegistry(String pathName) {
+        this(pathName, () -> new Item(new ModItemSettings()));
+    }
 
     ItemsRegistry(String pathName, Supplier<Item> itemSupplier) {
         this(pathName, itemSupplier, null);
