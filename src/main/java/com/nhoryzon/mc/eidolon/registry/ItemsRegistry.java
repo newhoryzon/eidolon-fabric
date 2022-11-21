@@ -6,7 +6,9 @@ import com.nhoryzon.mc.eidolon.item.BonechillWandItem;
 import com.nhoryzon.mc.eidolon.item.CleavingAxeItem;
 import com.nhoryzon.mc.eidolon.item.ModItemSettings;
 import com.nhoryzon.mc.eidolon.item.SoulfireWandItem;
+import com.nhoryzon.mc.eidolon.item.*;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -57,8 +59,18 @@ public enum ItemsRegistry {
     BONECHILL_WAND("bonechill_wand", BonechillWandItem::new),
     SOULFIRE_WAND("soulfire_wand", SoulfireWandItem::new),
     CLEAVING_AXE("cleaving_axe", CleavingAxeItem::new),
+    CODEX("codex", CodexItem::new),
+    REAPER_SCYTHE("reaper_scythe", ReaperScytheItem::new),
+    REVERSAL_PICK("reversal_pick", ReversalPickItem::new),
+    SAPPING_SWORD("sapping_sword", SappingSwortItem::new),
+    TOP_HAT("top_hat", TopHatItem::new),
+    UNHOLY_SYMBOL("unholy_symbol", UnholySymbolItem::new),
+    WARLOCK_HAT("warlock_hat",() -> new WarlockRobesItem(EquipmentSlot.HEAD)),
+    WARLOCK_CLOAK("warlock_cloak", () -> new WarlockRobesItem(EquipmentSlot.CHEST)),
+    WARLOCK_BOOTS("warlock_boots", () -> new WarlockRobesItem(EquipmentSlot.FEET)),
 
-    PEWTER_INGOT("pewter_ingot");
+    PEWTER_INGOT("pewter_ingot"),
+    WICKED_WEAVE("wicked_weave");
 
     private final String pathName;
     private final Supplier<Item> itemSupplier;
