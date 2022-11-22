@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "eidolon:lead_ore",
+    { "id": "#c:lead_ore", "required": false }
+  ]
+}
