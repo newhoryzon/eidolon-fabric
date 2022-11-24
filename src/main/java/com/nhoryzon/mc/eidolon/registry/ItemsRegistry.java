@@ -1,12 +1,18 @@
 package com.nhoryzon.mc.eidolon.registry;
 
 import com.nhoryzon.mc.eidolon.EidolonMod;
-import com.nhoryzon.mc.eidolon.item.ModBlockItem;
 import com.nhoryzon.mc.eidolon.item.BonechillWandItem;
 import com.nhoryzon.mc.eidolon.item.CleavingAxeItem;
+import com.nhoryzon.mc.eidolon.item.CodexItem;
+import com.nhoryzon.mc.eidolon.item.ModBlockItem;
 import com.nhoryzon.mc.eidolon.item.ModItemSettings;
+import com.nhoryzon.mc.eidolon.item.ReaperScytheItem;
+import com.nhoryzon.mc.eidolon.item.ReversalPickItem;
+import com.nhoryzon.mc.eidolon.item.SappingSwortItem;
 import com.nhoryzon.mc.eidolon.item.SoulfireWandItem;
-import com.nhoryzon.mc.eidolon.item.*;
+import com.nhoryzon.mc.eidolon.item.TopHatItem;
+import com.nhoryzon.mc.eidolon.item.UnholySymbolItem;
+import com.nhoryzon.mc.eidolon.item.WarlockRobesItem;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.Item;
@@ -52,7 +58,7 @@ public enum ItemsRegistry {
     POLISHED_PLANKS_STAIRS("polished_planks_stairs", () -> new ModBlockItem(BlocksRegistry.POLISHED_PLANKS_STAIRS.get())),
     POLISHED_PLANKS_FENCE("polished_planks_fence", () -> new ModBlockItem(BlocksRegistry.POLISHED_PLANKS_FENCE.get())),
     POLISHED_PLANKS_FENCE_GATE("polished_planks_fence_gate", () -> new ModBlockItem(BlocksRegistry.POLISHED_PLANKS_FENCE_GATE.get())),
-    POLISHED_WOOD_PILLAR("polished_wood_pillar", () -> new ModBlockItem(BlocksRegistry.POLISHED_WOOD_PILLAR.get()));
+    POLISHED_WOOD_PILLAR("polished_wood_pillar", () -> new ModBlockItem(BlocksRegistry.POLISHED_WOOD_PILLAR.get())),
 
     /**  Items **/
     
@@ -70,7 +76,24 @@ public enum ItemsRegistry {
     WARLOCK_BOOTS("warlock_boots", () -> new WarlockRobesItem(EquipmentSlot.FEET)),
 
     PEWTER_INGOT("pewter_ingot"),
-    WICKED_WEAVE("wicked_weave");
+    PEWTER_BLEND("pewter_blend"),
+    PEWTER_NUGGET("pewter_nugget"),
+    PEWTER_INLAY("pewter_inlay"),
+    LEAD_INGOT("lead_ingot"),
+    LEAD_NUGGET("lead_nugget"),
+    ARCANE_GOLD_INGOT("arcane_gold_ingot"),
+    ARCANE_GOLD_NUGGET("arcane_gold_nugget"),
+    SULFUR("sulfur"),
+    GOLD_INLAY("gold_inlay"),
+    WICKED_WEAVE("wicked_weave"),
+    TATTERED_CLOTH("tattered_cloth"),
+    SOUL_SHARD("soul_shard"),
+    DEATH_ESSENCE("death_essence"),
+    CRIMSON_ESSENCE("crimson_essence"),
+    ENDER_CALX("ender_calx"),
+    TALLOW("tallow"),
+    LESSER_SOUL_GEM("lesser_soul_gem"),
+    SHADOW_GEM("shadow_gem");
 
     private final String pathName;
     private final Supplier<Item> itemSupplier;

@@ -9,11 +9,14 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
+import net.minecraft.util.Identifier;
+
+import java.util.Objects;
 
 public enum EidolonArmorMaterial implements ArmorMaterial {
 
-    TOP_HAT_MATERIAL(7, 12,Ingredient.ofStacks(new ItemStack(Items.BLACK_WOOL)), ":top_hat"),
-    WARLOCK_ROBE_MATERIAL(21, 25, Ingredient.ofStacks(new ItemStack(ItemsRegistry.WICKED_WEAVE.get())), ":warlock_robes");
+    TOP_HAT_MATERIAL("top_hat", 7, 12,Ingredient.ofStacks(new ItemStack(Items.BLACK_WOOL))),
+    WARLOCK_ROBE_MATERIAL("warlock_robes", 21, 25, Ingredient.ofStacks(new ItemStack(ItemsRegistry.WICKED_WEAVE.get())));
 
     private static final int[] MAX_DAMAGE_ARRAY = new int[]{13, 15, 16, 11};
 
@@ -22,11 +25,11 @@ public enum EidolonArmorMaterial implements ArmorMaterial {
     private final Ingredient repairIngredient;
     private final String name;
 
-    EidolonArmorMaterial(int durabilityMultiplier, int enchantability, Ingredient repairIngredient, String name) {
+    EidolonArmorMaterial(String name, int durabilityMultiplier, int enchantability, Ingredient repairIngredient) {
+        this.name = name;
         this.durabilityMultiplier = durabilityMultiplier;
         this.enchantability = enchantability;
         this.repairIngredient = repairIngredient;
-        this.name = name;
     }
 
 
@@ -65,7 +68,7 @@ public enum EidolonArmorMaterial implements ArmorMaterial {
 
     @Override
     public String getName() {
-        return EidolonMod.MOD_ID + this.name;
+        return Objects.requireNonNull(Identifier.of(EidolonMod.MOD_ID, this.name)).toString();
     }
 
     @Override

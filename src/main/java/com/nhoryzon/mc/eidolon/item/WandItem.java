@@ -6,7 +6,7 @@ import net.minecraft.util.Rarity;
 public abstract class WandItem extends ItemBase implements IRechargeableWand {
 
     public WandItem() {
-        super(new ModItemSettings().rarity(Rarity.UNCOMMON).maxDamage(253).maxCount(1));
+        super(new ModItemSettings().rarity(Rarity.UNCOMMON).maxDamage(253));
     }
 
     @Override

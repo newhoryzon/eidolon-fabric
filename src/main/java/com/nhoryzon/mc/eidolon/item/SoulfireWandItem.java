@@ -5,6 +5,6 @@ public class SoulfireWandItem extends WandItem {
 
     public SoulfireWandItem() {
         super();
-        this.setLore("lore.eidolon.soulfire_wand");
+        this.setLore("lore.soulfire_wand");
     }
 }

@@ -7,7 +7,7 @@ import net.minecraft.util.Rarity;
 public class TopHatItem extends ArmorItemBase {
 
     public TopHatItem() {
-        super(EidolonArmorMaterial.INSTANCE, EquipmentSlot.HEAD, new ModItemSettings().rarity(Rarity.EPIC).maxCount(1));
-        this.setLore("lore.eidolon.top_hat");
+        super(EidolonArmorMaterial.TOP_HAT_MATERIAL, EquipmentSlot.HEAD, new ModItemSettings().rarity(Rarity.EPIC).maxCount(1));
+        this.setLore("lore.top_hat");
     }
 }

@@ -7,6 +7,6 @@ public class SappingSwortItem extends SwordItemBase {
 
     public SappingSwortItem() {
         super(EidolonToolMaterials.SANGUINE_TIER, 1, -2.4f, new ModItemSettings().rarity(Rarity.UNCOMMON).maxCount(1));
-        this.setLore("lore.eidolon.sapping_sword");
+        this.setLore("lore.sapping_sword");
     }
 }

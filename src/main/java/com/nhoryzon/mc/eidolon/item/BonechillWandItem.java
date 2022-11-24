@@ -5,7 +5,7 @@ public class BonechillWandItem extends WandItem {
 
     public BonechillWandItem() {
         super();
-        this.setLore("lore.eidolon.bonechill_wand");
+        this.setLore("lore.bonechill_wand");
     }
 
 }
