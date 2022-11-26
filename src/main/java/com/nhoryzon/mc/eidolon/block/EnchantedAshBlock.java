@@ -33,7 +33,6 @@ import net.minecraft.world.WorldView;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Map;
-import java.util.Random;
 
 public class EnchantedAshBlock extends BlockBase {
 
@@ -133,9 +132,8 @@ public class EnchantedAshBlock extends BlockBase {
     @Override
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
         BlockPos blockpos = pos.down();
-        BlockState blockstate = world.getBlockState(blockpos);
 
-        return canPlaceOnTopOf(world, blockpos, blockstate);
+        return canPlaceOnTopOf(world, blockpos, world.getBlockState(blockpos));
     }
 
     @Override

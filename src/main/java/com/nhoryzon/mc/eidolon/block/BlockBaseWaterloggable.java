@@ -15,13 +15,12 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldAccess;
 import org.jetbrains.annotations.Nullable;
 
-public class HorizontalWaterloggableBlock extends HorizontalBlockBase implements Waterloggable {
+public abstract class BlockBaseWaterloggable extends BlockBase implements Waterloggable {
 
-    public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
+    protected static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
 
-    public HorizontalWaterloggableBlock(Settings settings) {
+    public BlockBaseWaterloggable(Settings settings) {
         super(settings);
-        setDefaultState(getStateManager().getDefaultState().with(WATERLOGGED, false));
     }
 
     @Override
@@ -41,18 +40,19 @@ public class HorizontalWaterloggableBlock extends HorizontalBlockBase implements
             world.createAndScheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
         }
 
-        return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, pos);
+        return state;
     }
 
+    @Nullable
     @Override
-    public @Nullable BlockState getPlacementState(ItemPlacementContext ctx) {
-        return super.getPlacementState(ctx).with(WATERLOGGED, ctx.getWorld().getFluidState(ctx.getBlockPos()).getFluid() == Fluids.WATER);
+    public BlockState getPlacementState(ItemPlacementContext ctx) {
+        return getDefaultState().with(WATERLOGGED, ctx.getWorld().getFluidState(ctx.getBlockPos()).getFluid() == Fluids.WATER);
     }
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        super.appendProperties(builder);
         builder.add(WATERLOGGED);
     }
+
 
 }

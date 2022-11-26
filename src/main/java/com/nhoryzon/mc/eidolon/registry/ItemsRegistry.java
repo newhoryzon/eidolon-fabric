@@ -1,34 +1,11 @@
 package com.nhoryzon.mc.eidolon.registry;
 
 import com.nhoryzon.mc.eidolon.EidolonMod;
-import com.nhoryzon.mc.eidolon.block.BlockBase;
-import com.nhoryzon.mc.eidolon.block.CandleBlock;
-import com.nhoryzon.mc.eidolon.block.CandlestickBlock;
-import com.nhoryzon.mc.eidolon.block.EnchantedAshBlock;
-import com.nhoryzon.mc.eidolon.block.HorizontalWaterloggableBlock;
-import com.nhoryzon.mc.eidolon.block.NecroticFocusBlock;
-import com.nhoryzon.mc.eidolon.block.PlinthBlockBase;
-import com.nhoryzon.mc.eidolon.block.SoulEnchanterBlock;
-import com.nhoryzon.mc.eidolon.block.TableBlockBase;
-import com.nhoryzon.mc.eidolon.block.WoodenStandBlock;
-import com.nhoryzon.mc.eidolon.block.WorktableBlock;
 import com.nhoryzon.mc.eidolon.item.ModBlockItem;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
-import net.minecraft.block.Block;
-import net.minecraft.block.FenceBlock;
-import net.minecraft.block.FenceGateBlock;
-import net.minecraft.block.MapColor;
-import net.minecraft.block.Material;
-import net.minecraft.block.PillarBlock;
-import net.minecraft.block.SlabBlock;
-import net.minecraft.block.StairsBlock;
-import net.minecraft.block.WallBlock;
 import net.minecraft.item.Item;
-import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import net.minecraft.util.shape.VoxelShapes;
 
 import java.util.function.Supplier;
 

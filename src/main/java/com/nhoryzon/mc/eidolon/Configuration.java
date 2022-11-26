@@ -13,9 +13,6 @@ public final class Configuration {
 
     private static final File CONFIG_FILE = new File(FabricLoader.getInstance().getConfigDir().toFile(), "eidolon.json");
 
-    public Configuration() {
-    }
-
     public static Configuration load() {
         Configuration configuration = new Configuration();
         if (!CONFIG_FILE.exists()) {

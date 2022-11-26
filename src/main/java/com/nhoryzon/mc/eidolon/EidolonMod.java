@@ -1,6 +1,7 @@
 package com.nhoryzon.mc.eidolon;
 
-import com.nhoryzon.mc.eidolon.registry.*;
+import com.nhoryzon.mc.eidolon.registry.BlocksRegistry;
+import com.nhoryzon.mc.eidolon.registry.ItemsRegistry;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.item.ItemGroup;

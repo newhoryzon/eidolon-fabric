@@ -2,13 +2,9 @@ package com.nhoryzon.mc.eidolon.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Waterloggable;
-import net.minecraft.fluid.FluidState;
-import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
-import net.minecraft.state.property.Properties;
 import net.minecraft.util.function.BooleanBiFunction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -17,20 +13,19 @@ import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
-import net.minecraft.world.tick.OrderedTick;
 import org.jetbrains.annotations.Nullable;
 
-public class TableBlockBase extends BlockBase implements Waterloggable {
+public class TableBlockBase extends BlockBaseWaterloggable {
 
-    private final VoxelShape base;
-    private final VoxelShape corner;
 
-    private static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
     private static final BooleanProperty
             NX = BooleanProperty.of("nx"),
             PX = BooleanProperty.of("px"),
             NZ = BooleanProperty.of("nz"),
             PZ = BooleanProperty.of("pz");
+
+    private final VoxelShape base;
+    private final VoxelShape corner;
 
     public TableBlockBase(Settings settings) {
         this(settings, VoxelShapes.cuboid(0, .75, 0, 1, 1, 1));
@@ -55,36 +50,22 @@ public class TableBlockBase extends BlockBase implements Waterloggable {
     @Nullable
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
-        WorldView world = ctx.getWorld();
-        BlockPos blockPos = ctx.getBlockPos();
-
-        return updateCorners(world, blockPos, super.getPlacementState(ctx))
-                .with(WATERLOGGED, ctx.getWorld().getFluidState(ctx.getBlockPos()).getFluid() == Fluids.WATER);
+        BlockState superState = super.getPlacementState(ctx);
+        return updateCorners(ctx.getWorld(), ctx.getBlockPos(), superState == null ? getDefaultState() : superState);
     }
 
     @Override
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world,
             BlockPos pos, BlockPos neighborPos) {
-        if (state.get(WATERLOGGED)) {
-            world.createAndScheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
-        }
+        super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
 
         return updateCorners(world, pos, state);
     }
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(NX, PX, NZ, PZ, WATERLOGGED);
-    }
-
-    @Override
-    public FluidState getFluidState(BlockState state) {
-        return state.get(WATERLOGGED) ? Fluids.WATER.getStill(false) : super.getFluidState(state);
-    }
-
-    @Override
-    public boolean isTranslucent(BlockState state, BlockView world, BlockPos pos) {
-        return !state.get(WATERLOGGED);
+        super.appendProperties(builder);
+        builder.add(NX, PX, NZ, PZ);
     }
 
     protected BlockState updateCorners(WorldView world, BlockPos pos, BlockState state) {
