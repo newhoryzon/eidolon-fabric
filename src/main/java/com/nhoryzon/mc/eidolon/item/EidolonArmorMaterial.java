@@ -1,6 +1,5 @@
 package com.nhoryzon.mc.eidolon.item;
 
-import com.nhoryzon.mc.eidolon.EidolonMod;
 import com.nhoryzon.mc.eidolon.registry.ItemsRegistry;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorMaterial;
@@ -9,9 +8,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
-import net.minecraft.util.Identifier;
-
-import java.util.Objects;
 
 public enum EidolonArmorMaterial implements ArmorMaterial {
 
@@ -68,7 +64,7 @@ public enum EidolonArmorMaterial implements ArmorMaterial {
 
     @Override
     public String getName() {
-        return Objects.requireNonNull(Identifier.of(EidolonMod.MOD_ID, this.name)).toString();
+        return this.name;
     }
 
     @Override
