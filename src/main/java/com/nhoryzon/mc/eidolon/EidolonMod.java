@@ -1,6 +1,7 @@
 package com.nhoryzon.mc.eidolon;
 
 import com.nhoryzon.mc.eidolon.registry.BlocksRegistry;
+import com.nhoryzon.mc.eidolon.registry.EffectsRegistry;
 import com.nhoryzon.mc.eidolon.registry.ItemsRegistry;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
@@ -36,6 +37,7 @@ public class EidolonMod implements ModInitializer {
 
         BlocksRegistry.registerAll();
         ItemsRegistry.registerAll();
+        EffectsRegistry.registerAll();
     }
 
     protected void initConfiguration() {
