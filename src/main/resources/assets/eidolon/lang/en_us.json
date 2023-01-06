@@ -19,6 +19,9 @@
   "lore.eidolon.glass_hand": "Risk and reward.",
   "lore.eidolon.top_hat": "Indubitably.",
 
+  "effect.eidolon.chilled": "Chilled",
+  "effect.eidolon.anchored": "Anchored",
+
   "item.eidolon.lead_ingot": "Lead Ingot",
   "item.eidolon.lead_nugget": "Lead Nugget",
   "item.eidolon.pewter_blend": "Pewter Blend",
