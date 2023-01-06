@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "eidolon:wooden_altar",
+    "eidolon:worktable",
+    "eidolon:polished_planks",
+    "eidolon:polished_planks_slab",
+    "eidolon:polished_planks_stairs",
+    "eidolon:polished_planks_fence",
+    "eidolon:polished_planks_fence_gate",
+    "eidolon:polished_wood_pillar"
+  ]
+}

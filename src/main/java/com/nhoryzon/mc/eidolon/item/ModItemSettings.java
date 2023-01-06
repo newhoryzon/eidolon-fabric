@@ -9,5 +9,5 @@ public class ModItemSettings extends FabricItemSettings {
         super();
         group(EidolonMod.ITEM_GROUP);
     }
-    
+
 }

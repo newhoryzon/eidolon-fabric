@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "minecraft:bone"
+  },
+  "result": "eidolon:enchanted_ash",
+  "cookingtime": 200,
+  "experience": 0.1
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "eidolon",
+  "pattern": [
+    "xxx",
+    "xxx",
+    "xxx"
+  ],
+  "key": {
+    "x": {
+      "tag": "c:lead_ingots"
+    }
+  },
+  "result": {
+    "item": "eidolon:lead_block"
+  }
+}

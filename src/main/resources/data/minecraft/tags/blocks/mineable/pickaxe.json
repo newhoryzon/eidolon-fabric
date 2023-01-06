@@ -1,0 +1,25 @@
+{
+  "replace": false,
+  "values": [
+    "eidolon:lead_ore",
+    "eidolon:lead_block",
+    "eidolon:pewter_block",
+    "eidolon:arcane_gold_block",
+    "eidolon:stone_altar",
+    "eidolon:goblet",
+    "eidolon:unholy_effigy",
+    "eidolon:plinth",
+    "eidolon:crucible",
+    "eidolon:stone_hand",
+    "eidolon:necrotic_focus",
+    "eidolon:soul_enchanter",
+    "eidolon:wooden_brewing_stand",
+    "eidolon:smooth_stone_bricks",
+    "eidolon:smooth_stone_bricks_slab",
+    "eidolon:smooth_stone_bricks_stairs",
+    "eidolon:smooth_stone_bricks_wall",
+    "eidolon:smooth_stone_tiles",
+    "eidolon:smooth_stone_tiles_slab",
+    "eidolon:smooth_stone_tiles_stairs"
+  ]
+}
