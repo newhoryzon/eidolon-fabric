@@ -13,6 +13,17 @@ import com.nhoryzon.mc.eidolon.item.SoulfireWandItem;
 import com.nhoryzon.mc.eidolon.item.TopHatItem;
 import com.nhoryzon.mc.eidolon.item.UnholySymbolItem;
 import com.nhoryzon.mc.eidolon.item.WarlockRobesItem;
+import com.nhoryzon.mc.eidolon.item.BasicAmuletItem;
+import com.nhoryzon.mc.eidolon.item.BasicBeltItem;
+import com.nhoryzon.mc.eidolon.item.BasicRingItem;
+import com.nhoryzon.mc.eidolon.item.GlassHandItem;
+import com.nhoryzon.mc.eidolon.item.GravityBeltItem;
+import com.nhoryzon.mc.eidolon.item.MindShieldingPlateItem;
+import com.nhoryzon.mc.eidolon.item.PrestigiousPalmItem;
+import com.nhoryzon.mc.eidolon.item.ResoluteBeltItem;
+import com.nhoryzon.mc.eidolon.item.SanguineAmuletItem;
+import com.nhoryzon.mc.eidolon.item.VoidAmuletItem;
+import com.nhoryzon.mc.eidolon.item.WardedMailItem;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.Item;
@@ -74,6 +85,17 @@ public enum ItemsRegistry {
     WARLOCK_HAT("warlock_hat",() -> new WarlockRobesItem(EquipmentSlot.HEAD)),
     WARLOCK_CLOAK("warlock_cloak", () -> new WarlockRobesItem(EquipmentSlot.CHEST)),
     WARLOCK_BOOTS("warlock_boots", () -> new WarlockRobesItem(EquipmentSlot.FEET)),
+    BASIC_AMULET("basic_amulet", BasicAmuletItem::new),
+    BASIC_BELT("basic_belt", BasicBeltItem::new),
+    BASIC_RING("basic_ring", BasicRingItem::new),
+    GLASS_HAND("glass_hand", GlassHandItem::new),
+    GRAVITY_BELT("gravity_belt", GravityBeltItem::new),
+    MIND_SHIELDING_PLATE("mind_shielding_plate", MindShieldingPlateItem::new),
+    PRESTIGIOUS_PALM("prestigious_palm", PrestigiousPalmItem::new),
+    RESOLUTE_BELT("resolute_belt", ResoluteBeltItem::new),
+    SANGUINE_AMULET("sanguine_amulet", SanguineAmuletItem::new),
+    VOID_AMULET("void_amulet", VoidAmuletItem::new),
+    WARDED_MAIL("warded_mail", WardedMailItem::new),
 
     PEWTER_INGOT("pewter_ingot"),
     PEWTER_BLEND("pewter_blend"),
